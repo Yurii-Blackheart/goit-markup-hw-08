@@ -1,0 +1,125 @@
+/* --------------------ВЕРХНЯ ЛІНІЯ-------------------- */
+.header {
+  border-bottom: 1px solid $header-border-color;
+
+  color: $primary-text-color;
+
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.02em;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/*--------------------НАВІГАЦІЯ САЙТУ--------------------  */
+.header__container {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__nav {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header__list {
+  display: flex;
+  margin-left: 95px;
+
+  & .header__item:not(:last-child) {
+    margin-right: 50px;
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.header__link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  color: $primary-text-color;
+
+  font-weight: 500;
+  line-height: 1.14;
+  transition: color $time-duration $time-function;
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.header__link.current {
+  position: relative;
+  color: $accent-color;
+}
+
+.header__link.current::after {
+  content: '';
+  position: absolute;
+  display: block;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background-color: $accent-color;
+  border-radius: 2px;
+}
+
+/*--------------------ЗВОРОТНІЙ ЗВ'ЯЗОК--------------------  */
+.header__feedback {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    display: block;
+  }
+
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    & .header__item:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+  @media screen and (min-width: $desktop) {
+    & .header__item:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+.header__e-mail,
+.header__phone {
+  display: flex;
+  align-items: center;
+  color: $secondary-text-color;
+
+  font-weight: 500;
+  line-height: 1.14;
+
+  transition: color $time-duration $time-function, fill $time-duration $time-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+}
+
+.header__icon {
+  margin-right: 8px;
+  fill: currentColor;
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 10px;
+  }
+}
